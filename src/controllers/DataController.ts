@@ -2,8 +2,10 @@ import { Request, Response } from 'express';
 
 class DataController {
   hello(req: Request, res: Response) {
-    let text: String = req.params.text;
-    res.send(`Hello ${ text }!!`);
+    let user: any = req.user;
+    let name = user && user.displayName || 'world';
+    console.log(user)
+    res.send(`Hello ${ name }!!`);
   }
 }
 

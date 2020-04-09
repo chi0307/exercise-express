@@ -10,7 +10,7 @@ class DataRoute extends Route{
   }
 
   protected setRoute() {
-    this.router.get('/data/hello/:text', this.dataController.hello);
+    this.router.get('/data/hello', this.dataController.hello);
   }
 }
 

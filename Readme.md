@@ -1,4 +1,4 @@
-# Exercise express, webpack, babel, typescript
+# Exercise express, webpack, babel, typescript, social login
 
 ## express
 http://expressjs.com/
@@ -18,3 +18,6 @@ https://babeljs.io/
 ## typescript
 強型別，加強對程式碼的型別檢查
 本專案使用 babel-loader @babel/preset-typescript 進行typescript編譯
+
+## Social Login
+用passport搭配mongodb實作第三方登入

@@ -1,8 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { routers } from './router';
+import { session } from './plugins/session';
 
-const port = 4000;
+const port = 80;
 let app: express.Application = express();
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(session);
 
 for(const router of routers) {
   app.use(router.getRouter());
