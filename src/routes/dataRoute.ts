@@ -1,7 +1,7 @@
 import Route from './route';
 import DataController from '../controllers/DataController';
 
-class DataRoute extends Route{
+class DataRoute extends Route {
   private dataController = new DataController();
 
   constructor() {
@@ -10,7 +10,7 @@ class DataRoute extends Route{
   }
 
   protected setRoute() {
-    this.router.get('/data/hello', this.dataController.hello);
+    this.router.get('/', this.dataController.hello);
   }
 }
 

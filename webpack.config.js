@@ -11,15 +11,21 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   // 進入點
   entry: {
-    server: './server.ts'
+    server: './server.ts',
   },
   // 輸出
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.ts$/,
+        include: /src/,
+        loader: 'eslint-loader',
+      },
       {
         test: /\.ts$/,
         exclude: /(node_modules)/,
@@ -28,19 +34,16 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env', '@babel/preset-typescript'],
             // 解決 Missing class properties transform
-            plugins: ['transform-class-properties']
-          }
-        }
-      }
-    ]
+            plugins: ['transform-class-properties'],
+          },
+        },
+      },
+    ],
   },
   resolve: {
     // 解析指定副檔名檔案
-    extensions: [ '.ts' ]
+    extensions: ['.ts'],
   },
   externals: [nodeExternals()],
-  plugins: [
-    new NodemonPlugin(),
-    new CleanWebpackPlugin(),
-  ],
+  plugins: [new NodemonPlugin(), new CleanWebpackPlugin()],
 };

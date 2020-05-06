@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { routers } from './router';
 import { session } from './plugins/session';
 
@@ -7,10 +7,10 @@ let app: express.Application = express();
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(session);
 
-for(const router of routers) {
+for (const router of routers) {
   app.use(router.getRouter());
 }
 
 app.listen(port, function () {
-  console.log(`Example app listening on port ${ port }!`);
+  console.log(`Example app listening on port ${port}!`);
 });
