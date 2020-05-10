@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-class DataController {
-  hello(req: Request, res: Response) {
+class IndexController {
+  index(req: Request, res: Response) {
     let user: any = req.user;
     let name = (user && user.displayName) || 'world';
     let view = `Hello ${name}!!`;
@@ -19,4 +19,4 @@ class DataController {
   }
 }
 
-export default DataController;
+export default IndexController;

@@ -1,8 +1,5 @@
 import Route from './routes/route';
 import LoginRoute from './routes/LoginRoute';
-import DataRoute from './routes/DataRoute';
+import IndexRoute from './routes/IndexRoute';
 
-export const routers: Array<Route> = [
-  new LoginRoute(),
-  new DataRoute()
-];
+export const routers: Array<Route> = [new LoginRoute(), new IndexRoute()];
